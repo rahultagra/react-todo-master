@@ -5,6 +5,62 @@
 Hi! there, so I started this project with the intention to practice and stablish some best practices of development, reactJs, redux and reducers, tests, folder structure, naming, linting, configurations, and more.
 I was thinking in which type of app should I create to apply those practices, after an hour I just said wait!, let's do it in the most common starter app! a ToDo App, 🤔 ok ?!?!. Then I realized that everyone has a ToDo App with the same styles or layout, so I said no! let's do something different but simple and there you have "Not Another ToDo App". Hope you enjoy it!.
 
+## How AppDynamics have been Integrated
+
+Following is the script we get from AppDynamics.
+
+<script type="text/javascript" charset="UTF-8">
+      (function(config) {
+        config.appKey = <APP-KEY/>;
+        config.adrumExtUrlHttp = "http://cdn.appdynamics.com";
+        config.adrumExtUrlHttps = "https://cdn.appdynamics.com";
+        config.beaconUrlHttp = "http://col.eum-appdynamics.com";
+        config.beaconUrlHttps = "https://col.eum-appdynamics.com";
+        config.xd = { enable: true };
+        config.spa = {
+          spa2: true
+        };
+      })(window["adrum-config"] || (window["adrum-config"] = {}));
+
+      (function(cfg) {
+        if (cfg.beacon) cfg.beacon.neverSendImageBeacon = true;
+        else cfg.beacon = { neverSendImageBeacon: true };
+      })(window["adrum-config"] || (window["adrum-config"] = {}));
+    </script>
+
+    <script
+      src="//cdn.appdynamics.com/adrum/adrum-latest.js"
+      type="text/javascript"
+      charset="UTF-8"
+    >
+    </script>
+
+We need to put this script on our page to app and update the key with key generated for you app by appdynamics.
+
+#### Problem Statement for using Appdynamics
+
+Now in case of SPA's and microfrontend architectures, Where we don not refresh our page .So in those cases how appdynamics can track the page-views w.r.t different components ?
+
+#### Solution
+
+In those cases you can simply use
+
+     window.ADRUM.markVirtualPageBegin("YOUR-COMPONENT-NAME", true);
+
+And after mounting of your component call
+
+     window.ADRUM.markVirtualPageEnd();
+
+This is how we are tracking Virtual page views.
+
+Note:
+
+        config.spa = {
+          spa2: true
+        };
+
+Must be added to make Appdynamics know that you are working with Single Page Applications made with react library.
+
 ## App Link
 
 You can see in action [here](https://luiggi370z.github.io/react-todo/).
