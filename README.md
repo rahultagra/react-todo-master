@@ -65,13 +65,15 @@ Must be added to make Appdynamics know that you are working with Single Page App
 #### Appdynamics Metrics
 
 For base pages, Browser RUM calculates 
-  End User Response Time (EURT)
-  Visually Complete Time (VCT)
-  Page Complete Time  (PCT). 
+        
+        End User Response Time (EURT)
+        Visually Complete Time (VCT)
+        Page Complete Time  (PCT). 
   
 For virtual pages, Browser RUM calculates
-  End User Response Time (EURT)
-  Visually Complete Time (VCT)
+        
+        End User Response Time (EURT)
+        Visually Complete Time (VCT)
 
 ##### End User Response Time
 
