@@ -61,6 +61,30 @@ Note:
 
 Must be added to make Appdynamics know that you are working with Single Page Applications made with react library.
 
+
+#### Appdynamics Metrics
+
+For base pages, Browser RUM calculates 
+  End User Response Time (EURT)
+  Visually Complete Time (VCT)
+  Page Complete Time  (PCT). 
+  
+For virtual pages, Browser RUM calculates
+  End User Response Time (EURT)
+  Visually Complete Time (VCT)
+
+##### End User Response Time
+
+End User Response Time (EURT) calculates the total time for all content (visual and non-visual) to be loaded on a page. 
+
+##### Visually Complete Time
+
+Visually Complete Time (VCT) calculates the point in time when the browser has finished loading all visual content in the viewport.
+
+##### Page Complete Time
+
+Page Complete Time (PCT) is a SPA2 metric for base pages only. PCT calculates the point in time when the browser has finished loading all visual content on the page, regardless of whether the content is in or outside the viewport.
+
 ## App Link
 
 You can see in action [here](https://luiggi370z.github.io/react-todo/).
