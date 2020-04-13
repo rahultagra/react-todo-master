@@ -9,7 +9,7 @@ I was thinking in which type of app should I create to apply those practices, af
 
 Following is the script we get from AppDynamics.
 
-<script type="text/javascript" charset="UTF-8">
+    <script type="text/javascript" charset="UTF-8">
       (function(config) {
         config.appKey = <APP-KEY/>;
         config.adrumExtUrlHttp = "http://cdn.appdynamics.com";
